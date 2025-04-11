@@ -1,0 +1,9 @@
+API_KEY = 'your_api_key'
+API_SECRET = 'your_api_secret'
+BASE_URL = 'https://api.delta.exchange'
+SYMBOLS = ['BTCUSDT', 'ETHUSDT']
+CAPITAL_PER_TRADE = 8
+STOP_LOSS_PERCENT = 0.5
+TAKE_PROFIT_PERCENT = 1.0
+TELEGRAM_BOT_TOKEN = 'your_telegram_bot_token'
+TELEGRAM_CHAT_ID = 'your_telegram_chat_id'
