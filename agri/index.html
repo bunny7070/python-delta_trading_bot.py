@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgriConnect - Farming Business Finder</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <script>
+    function handleSearch(event) {
+      event.preventDefault();
+      const location = document.getElementById('location').value;
+      const farmingType = document.getElementById('farmingType').value;
+      const quantity = document.getElementById('quantity').value;
+      const unit = document.getElementById('unit').value;
+
+      const resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = `
+        <h3 class="text-lg font-semibold mb-2">Search Results</h3>
+        <p><strong>Location:</strong> ${location}</p>
+        <p><strong>Farming Type:</strong> ${farmingType}</p>
+        <p><strong>Quantity:</strong> ${quantity} ${unit}</p>
+        <p class="mt-2 text-green-700">(This is a placeholder result section. You can connect to a backend later.)</p>
+      `;
+    }
+  </script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <header class="bg-green-600 text-white p-6 shadow-md">
+    <h1 class="text-2xl font-bold text-center">AgriConnect</h1>
+    <p class="text-center">Find the right farming resources in your location</p>
+  </header>
+
+  <main class="p-6 max-w-3xl mx-auto">
+    <div class="bg-white p-6 rounded shadow-md">
+      <h2 class="text-xl font-semibold mb-4">Search for Farming Resources</h2>
+      <form class="space-y-4" onsubmit="handleSearch(event)">
+        <div>
+          <label class="block font-medium">Location</label>
+          <input id="location" type="text" placeholder="Enter city or district" class="w-full p-2 border rounded" />
+        </div>
+
+        <div>
+          <label class="block font-medium">Type of Farming</label>
+          <select id="farmingType" class="w-full p-2 border rounded">
+            <option value="">Select type</option>
+            <option>Crop Farming</option>
+            <option>Dairy Farming</option>
+            <option>Poultry</option>
+            <option>Horticulture</option>
+            <option>Organic Farming</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-medium">Quantity Needed</label>
+          <div class="flex space-x-2">
+            <input id="quantity" type="number" min="1" class="flex-1 p-2 border rounded" placeholder="Enter quantity" />
+            <select id="unit" class="p-2 border rounded">
+              <option>kg</option>
+              <option>grams</option>
+              <option>quintal</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Search</button>
+      </form>
+    </div>
+
+    <div id="results" class="mt-8 bg-white p-6 rounded shadow-md"></div>
+  </main>
+
+  <footer class="text-center text-gray-500 p-4 mt-10">
+    &copy; 2025 AgriConnect. All rights reserved.
+  </footer>
+</body>
+</html>
